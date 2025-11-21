@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Visual - Diseñador Gráfico</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header/Navegación -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">PC Visual</div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#inicio" class="nav-link active" data-section="inicio">Inicio</a></li>
+                    <li><a href="#portfolio" class="nav-link" data-section="portfolio">Portfolio</a></li>
+                    <li><a href="#sobre-mi" class="nav-link" data-section="sobre-mi">Sobre mí</a></li>
+                    <li><a href="#contacto" class="nav-link" data-section="contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección Inicio -->
+    <section id="inicio" class="section active">
+        <div class="hero">
+            <!-- Actualizada ruta de imagen a carpeta images -->
+            <img src="images/main-banner1.jpg" alt="Diseño gráfico" class="hero-image">
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <h1>Diseño Gráfico Profesional</h1>
+                    <p>Transformo ideas en diseños visuales impactantes</p>
+                    <!-- Botón Ver Trabajos ahora navega a Portfolio -->
+                    <button class="btn btn-primary" id="ver-trabajos-btn">Ver Trabajos</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Portfolio -->
+    <section id="portfolio" class="section">
+        <div class="container">
+            <h2 class="section-title">Mi Portfolio</h2>
+            <p class="section-subtitle">Explora mis últimos proyectos y trabajos realizados</p>
+            
+            <!-- Agregar botones de categorías -->
+            <div class="category-tabs">
+                <button class="category-btn active" onclick="filterCategory('todas')">Todas</button>
+                <button class="category-btn" onclick="filterCategory('señaletica')">Señalética</button>
+                <button class="category-btn" onclick="filterCategory('afiches')">Afiches</button>
+                <button class="category-btn" onclick="filterCategory('ilustraciones')">Ilustraciones</button>
+                <button class="category-btn" onclick="filterCategory('identidad')">Identidad</button>
+                <button class="category-btn" onclick="filterCategory('packaging')">Packaging</button>
+            </div>
+            
+            <div class="portfolio-grid" id="portfolio-grid">
+                <!-- Proyecto 1 - Identidad -->
+                <div class="portfolio-card" data-category="identidad" onclick="openModal(1)">
+                    <!-- Ruta actualizada a carpeta images -->
+                    <img src="images/tab1.png" alt="Branding Corporativo">
+                    <div class="portfolio-overlay">
+                        <h3>Diseño de Identidad</h3>
+                        <p class="portfolio-category">Sabores del Río</p>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 - Señalética -->
+                <div class="portfolio-card" data-category="señaletica" onclick="openModal(2)">
+                    <img src="images/tab2.jpg" alt="Sistema de Señalética">
+                    <div class="portfolio-overlay">
+                        <h3>Sistema de Señalética</h3>
+                        <p class="portfolio-category">Yacht Club Paysandú</p>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3 - Afiches -->
+                <div class="portfolio-card" data-category="afiches" onclick="openModal(3)">
+                    <img src="images/tab3.png" alt="Campaña de Afiches">
+                    <div class="portfolio-overlay">
+                        <h3>Campaña de Afiches</h3>
+                        <p class="portfolio-category">Centro de Lenguas Extranjeras</p>
+                    </div>
+                </div>
+
+                <!-- Proyecto 4 - Ilustraciones -->
+                <div class="portfolio-card" data-category="ilustraciones" onclick="openModal(4)">
+                    <img src="images/tab4.png" alt="Ilustración Digital">
+                    <div class="portfolio-overlay">
+                        <h3>Ilustración Digital</h3>
+                        <p class="portfolio-category">Tapa de disco</p>
+                    </div>
+                </div>
+
+                <!-- Proyecto 5 - Identidad -->
+                <div class="portfolio-card" data-category="identidad" onclick="openModal(5)">
+                    <img src="images/tab5.jpg" alt="Logo Design">
+                    <div class="portfolio-overlay">
+                        <h3>Rediseño de Identidad</h3>
+                        <p class="portfolio-category">MERBE</p>
+                    </div>
+                </div>
+
+                <!-- Proyecto 6 - Afiches -->
+                <div class="portfolio-card" data-category="afiches" onclick="openModal(6)">
+                    <img src="images/tab6.jpg" alt="Póster Artístico">
+                    <div class="portfolio-overlay">
+                        <h3>Póster Infográfico</h3>
+                        <p class="portfolio-category">Templo Budista</p>
+                    </div>
+                </div>
+
+                <!-- Proyecto 8 - Packaging -->
+                <div class="portfolio-card" data-category="packaging" onclick="openModal(10)">
+                    <img src="images/tab8.png" alt="Diseño de Empaque">
+                    <div class="portfolio-overlay">
+                        <h3>Diseño de Empaque</h3>
+                        <p class="portfolio-category">Lata de Mocktail</p>
+                    </div>
+                </div>
+
+                <!-- Proyecto 9 - Packaging -->
+                <div class="portfolio-card" data-category="ilustraciones" onclick="openModal(11)">
+                    <img src="images/tab9.png" alt="Caja de Producto">
+                    <div class="portfolio-overlay">
+                        <h3>Ilustración digital</h3>
+                        <p class="portfolio-category">Póster de pelicula</p>
+                    </div>
+                </div>
+
+                <!-- Proyecto 12 - Ilustraciones -->
+                <div class="portfolio-card" data-category="ilustraciones" onclick="openModal(7)">
+                    <img src="images/tab12.jpg" alt="Ilustración Infantil">
+                    <div class="portfolio-overlay">
+                        <h3>Ilustración Infantil</h3>
+                        <p class="portfolio-category">Libros clásicos</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sobre mí -->
+    <section id="sobre-mi" class="section">
+        <div class="container">
+            <h2 class="section-title">Sobre mí</h2>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>¡Hola! Soy un Diseñador Gráfico Profesional</h3>
+                    <p>Soy Pablo Carballo, diseñador gráfico de 29 años, especializado en ilustración y diseño de identidad visual. Mi trabajo se centra en crear soluciones gráficas que combinan concepto, estética y funcionalidad, buscando siempre transmitir la esencia de cada proyecto de forma clara y original.</p>
+                    <p>Además me desempeño como docente de Arte y Comunicación Visual en educación secundaria, donde disfruto compartir procesos creativos, fomentar la expresión personal y acompañar a los estudiantes en el desarrollo de su mirada visual y crítica. Mi enfoque une la práctica profesional con la docencia, entendiendo el diseño como una herramienta de comunicación, reflexión y transformación cultural.</p>
+                    <p>Mi misión es ofrecer soluciones de diseño gráfico y comunicación visual de alto impacto, basadas en la estrategia y la claridad. Simultáneamente, busco enriquecer mi práctica profesional integrando principios pedagógicos que aseguren proyectos visuales no solo estéticos, sino también claros y funcionales.</p>
+                    <p>Mi visión es que mi trabajo sea reconocido por la capacidad de simplificar mensajes complejos e inspirar a futuras generaciones de comunicadores visuales a través de la práctica profesional.</p>
+
+                    <div class="skills-section">
+                        <h4>Herramientas y Habilidades</h4>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <strong>Adobe Creative Suite</strong>
+                                <p>Photoshop, Illustrator, InDesign, Lightroom</p>
+                            </div>
+                            <div class="skill-item">
+                                <strong>Branding</strong>
+                                <p>Identidad visual, diseño de marca</p>
+                            </div>
+                            <div class="skill-item">
+                                <strong>Diseño Web</strong>
+                                <p>UX/UI, Responsive Design</p>
+                            </div>
+                            <div class="skill-item">
+                                <strong>Ilustración</strong>
+                                <p>Arte digital, Vectores</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <!-- Ruta actualizada a carpeta images -->
+                    <img src="images/Foto_personal.jpeg" alt="Foto personal">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="section">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <p class="section-subtitle">¿Tienes un proyecto en mente? Contáctame y hablemos</p>
+            
+            <div class="contact-wrapper">
+                <form class="contact-form" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="asunto">Asunto</label>
+                        <input type="text" id="asunto" name="asunto" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                </form>
+                
+                <div class="contact-info">
+                    <div class="info-item">
+                        <strong>Email</strong>
+                        <p>pablojavier23031996@gmail.com</p>
+                    </div>
+                    <div class="info-item">
+                        <strong>Teléfono</strong>
+                        <p>+598 98524388</p>
+                    </div>
+                    <div class="info-item">
+                        <strong>Ubicación</strong>
+                        <p>Paysandú, Uruguay</p>
+                    </div>
+                    <div class="info-item">
+                        <strong>Redes Sociales</strong>
+                        <p>
+                            <a href="#" class="social-link">Instagram</a> | 
+                            <a href="#" class="social-link">Behance</a> | 
+                            <a href="#" class="social-link">LinkedIn</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 PC Visual. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal para proyectos -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+
+        <div class="modal-body">
+
+            <div class="modal-info">
+                <h2 id="modal-title"></h2>
+                <p id="modal-description"></p>
+            </div>
+
+            <img id="modal-image" src="" alt="Proyecto" class="modal-image-full">
+        </div>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
